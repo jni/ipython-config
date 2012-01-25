@@ -9,4 +9,4 @@ if [ -f $fn ]; then
     mv $fn ${fn}.bak
 fi
 
-mv `dirname $0`/ipython_config.py $fn
+cp `dirname $0`/ipython_config.py $fn
