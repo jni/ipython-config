@@ -213,9 +213,15 @@ c.TerminalIPythonApp.display_banner = False
 # c.TerminalInteractiveShell.readline_remove_delims = '-/~'
 
 # The name of the logfile to use.
-os.makedirs(os.path.expanduser('~/ipython-logs'))
-c.TerminalInteractiveShell.logfile = \
-    os.path.expanduser('~/ipython-logs/automatic-log--%i.%i.%i--%i.%i.py'%dt.datetime.today().timetuple()[:5])
+logfile_dir = os.path.expanduser('~/ipython-logs')
+if not os.path.exists(logfile_dir):
+    os.makedirs(logfile_dir)
+logfile_fn = logfile_dir + \
+    '/automatic-log--%i.%i.%i--%i.%i.py' % dt.datetime.today().timetuple()[:5]
+with open(logfile_fn, 'w') as f:
+    pass
+c.TerminalInteractiveShell.logfile = logfile_fn
+    
 
 # Start logging to the default log file.
 c.TerminalInteractiveShell.logstart = True
