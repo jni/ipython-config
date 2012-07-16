@@ -1,5 +1,6 @@
 # Configuration file for ipython.
 
+import os
 import datetime as dt
 
 c = get_config()
@@ -215,7 +216,9 @@ c.TerminalIPythonApp.display_banner = False
 c.TerminalInteractiveShell.logstart = True
 
 # The name of the logfile to use.
-c.TerminalInteractiveShell.logfile = '/groups/chklovskii/home/nuneziglesiasj/ipython-logs/automatic-log--%i.%i.%i--%i.%i.py'%dt.datetime.today().timetuple()[:5]
+os.makedirs(os.path.expanduser('~/ipython-logs'))
+c.TerminalInteractiveShell.logfile = \
+    os.path.expanduser('~/ipython-logs/automatic-log--%i.%i.%i--%i.%i.py'%dt.datetime.today().timetuple()[:5])
 
 # The shell program to be used for paging.
 # c.TerminalInteractiveShell.pager = 'less'
