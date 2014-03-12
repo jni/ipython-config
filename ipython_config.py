@@ -217,7 +217,7 @@ logfile_dir = os.path.expanduser('~/ipython-logs')
 if not os.path.exists(logfile_dir):
     os.makedirs(logfile_dir)
 logfile_fn = os.path.join(logfile_dir,
-                          '/automatic-log--%i.%02i.%02i--%02i.%02i.py' %
+                          'automatic-log--%i.%02i.%02i--%02i.%02i.py' %
                           dt.datetime.today().timetuple()[:5])
 with open(logfile_fn, 'w') as f:
     pass
