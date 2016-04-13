@@ -65,7 +65,9 @@ c = get_config()
 # c.TerminalIPythonApp.pylab = None
 
 # Suppress warning messages about legacy config files
-c.TerminalIPythonApp.ignore_old_config = True
+# hilariously, this setting now itself causes a warning!
+# So, it is now commented out.
+# c.TerminalIPythonApp.ignore_old_config = True
 
 # Create a massive crash report when IPython enconters what may be an internal
 # error.  The default is to append a short message to the usual traceback
