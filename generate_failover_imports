@@ -11,5 +11,5 @@ with open(infile) as fin:
             fout.write('try:\n')
             fout.write('    ' + line)
             fout.write('except ImportError as err:\n')
-            fout.write('print(err)\n')
+            fout.write('    print(err)\n')
 
