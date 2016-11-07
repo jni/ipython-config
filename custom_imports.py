@@ -1,5 +1,4 @@
 from skimage import *
-from sklearn import *
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
