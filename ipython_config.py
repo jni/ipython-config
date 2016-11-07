@@ -93,7 +93,7 @@ c.TerminalIPythonApp.display_banner = False
 # A list of dotted module names of IPython extensions to load.
 c.InteractiveShellApp.extensions = [
     'line_profiler',
-    'Cython'
+    'cython'
 ]
 
 # Whether to install the default config files into the profile dir. If a new
