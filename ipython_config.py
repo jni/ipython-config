@@ -83,7 +83,6 @@ c = get_config()
 # configuration (through profiles), history storage, etc. The default is usually
 # $HOME/.ipython. This options can also be specified through the environment
 # variable IPYTHON_DIR.
-# c.TerminalIPythonApp.ipython_dir = u'/groups/chklovskii/home/nuneziglesiasj/.ipython'
 
 # Whether to display a banner upon starting IPython.
 c.TerminalIPythonApp.display_banner = False
@@ -92,7 +91,10 @@ c.TerminalIPythonApp.display_banner = False
 # c.TerminalIPythonApp.quick = False
 
 # A list of dotted module names of IPython extensions to load.
-c.TerminalIPythonApp.extensions = ['line_profiler']
+c.InteractiveShellApp.extensions = [
+    'line_profiler',
+    'Cython'
+]
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,
