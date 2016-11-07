@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+import subprocess as sp
+
+rundir = os.path.dirname(os.path.abspath('__file__'))
+config_file = os.path.join(rundir, 'ipython_config.py')
+import_file = os.path.join(rundir, 'custom_imports.py')
+output_file = os.path.splitext(import_file)[0] + '_safe.py'
+
+ipython_dir = os.path.expanduser('~/.ipython')
+profile_dir = os.path.join(ipython_dir, 'profile_default')
+startup_dir = os.path.join(profile_dir, 'startup')
+
+# First, copy ipython_config to correct location
+shutil.copy(config_file, profile_dir)
+# Then, generate the custom imports file
+sp.call([os.path.join(rundir, 'generate_failover_imports'),
+         import_file, output_file])
+# Finally, copy the failover imports to the startup dir
+shutil.copy(output_file, startup_dir)
+# .. and delete the local copy
+os.remove(output_file)
