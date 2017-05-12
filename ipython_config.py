@@ -3,8 +3,6 @@
 import os
 import datetime as dt
 import sys
-from contextlib import suppress
-
 
 c = get_config()
 
@@ -92,9 +90,15 @@ c.TerminalIPythonApp.display_banner = False
 
 # Start IPython quickly by skipping the loading of config files.
 # c.TerminalIPythonApp.quick = False
-c.InteractiveShellApp.extensions = []
+
+
 
 # A list of dotted module names of IPython extensions to load.
+
+c.InteractiveShellApp.extensions = []
+
+# Including these custom imports inside a try and catch block has the effect of
+# suppressing the stacktrace appearing in stdout if there are import errors.
 try:
     import line_profiler
     c.InteractiveShellApp.extensions.append('line_profiler')
