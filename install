@@ -4,6 +4,7 @@ import os
 import sys
 import shutil
 import subprocess as sp
+from contextlib import suppress
 
 rundir = os.path.dirname(os.path.abspath('__file__'))
 config_file = os.path.join(rundir, 'ipython_config.py')
@@ -18,7 +19,8 @@ startup_dir = os.path.join(profile_dir, 'startup')
 shutil.copy(config_file, profile_dir)
 # Then, generate the custom imports file
 sp.call([os.path.join(rundir, 'generate_failover_imports'),
-         import_file, output_file])
+        import_file, output_file])
+
 # Finally, copy the failover imports to the startup dir
 shutil.copy(output_file, startup_dir)
 # .. and delete the local copy
