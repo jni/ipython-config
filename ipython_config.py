@@ -63,7 +63,7 @@ c = get_config()
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-# c.TerminalIPythonApp.pylab = 'qt5'
+# c.TerminalIPythonApp.pylab = 'None'
 
 # Suppress warning messages about legacy config files
 # hilariously, this setting now itself causes a warning!
@@ -90,8 +90,6 @@ c.TerminalIPythonApp.display_banner = False
 
 # Start IPython quickly by skipping the loading of config files.
 # c.TerminalIPythonApp.quick = False
-
-
 
 # A list of dotted module names of IPython extensions to load.
 
