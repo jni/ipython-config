@@ -90,6 +90,9 @@ c.TerminalIPythonApp.display_banner = False
 # Start IPython quickly by skipping the loading of config files.
 # c.TerminalIPythonApp.quick = False
 
+# Start IPython with interactive matplotlib plots
+c.InteractiveShellApp.matplotlib = 'auto'
+
 # A list of dotted module names of IPython extensions to load.
 c.InteractiveShellApp.extensions = [
     'line_profiler',
