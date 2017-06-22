@@ -1,6 +1,7 @@
 from skimage import io, filters, segmentation, morphology, exposure, draw
 from skimage import feature, future, geometry, transform, graph, util
 from skimage import measure, restoration, _shared
+from importlib import reload
 import imageio as iio
 import sys
 import os
