@@ -111,6 +111,8 @@ try:
 except ImportError as err:
     print('cython not installed.', file=sys.stderr)
 
+# Set the matplotlib inline display to retina quality
+c.InlineBackend.figure_formats = {'retina', 'png', 'svg'}
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,
