@@ -92,7 +92,7 @@ c.TerminalIPythonApp.display_banner = False
 # c.TerminalIPythonApp.quick = False
 
 # Start IPython with interactive matplotlib plots
-c.TerminalIPythonApp.matplotlib = 'auto'
+c.TerminalIPythonApp.matplotlib = 'qt5'
 
 # A list of dotted module names of IPython extensions to load.
 
