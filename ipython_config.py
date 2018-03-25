@@ -7,6 +7,12 @@ import sys
 c = get_config()
 
 #------------------------------------------------------------------------------
+# NbConvert Preprocessor configuration
+#------------------------------------------------------------------------------
+
+c.ExecutePreprocessor.timeout = -1
+
+#------------------------------------------------------------------------------
 # InteractiveShellApp configuration
 #------------------------------------------------------------------------------
 
@@ -410,3 +416,6 @@ c.TerminalInteractiveShell.logstart = True
 # This will enable completion on elements of lists, results of function calls,
 # etc., but can be unsafe because the code is actually evaluated on TAB.
 # c.IPCompleter.greedy = False
+
+# Turn off jedi autocompletion
+c.IPCompleter.use_jedi = False
