@@ -1,4 +1,4 @@
-from skimage import io, filters, segmentation, morphology, exposure, draw
+from skimage import data, io, filters, segmentation, morphology, exposure, draw
 from skimage import feature, future, geometry, transform, graph, util
 from skimage import measure, restoration, _shared
 from importlib import reload
@@ -12,3 +12,4 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import toolz as tz
 from scipy import sparse, ndimage as ndi, optimize
+import napari
