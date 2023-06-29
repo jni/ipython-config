@@ -3,6 +3,7 @@
 import os
 import datetime as dt
 import sys
+import warnings
 
 c = get_config()
 
@@ -298,6 +299,18 @@ c.TerminalInteractiveShell.logstart = True
 
 # Automatically call the pdb debugger after every exception.
 # c.TerminalInteractiveShell.pdb = False
+
+# Syntax highlighting settings
+try:
+    c.TerminalInteractiveShell.highlighting_style = 'railscasts'
+except ModuleNotFoundError:
+    warnings.warn('highlighting style set to "railscasts" but that module is'
+                  ' not found. Using default style.')
+    warnings.warn(
+            'To install railscasts, use the command: \n'
+            'pip install git+https://github.com/JoeyButler/pygments-style-railscasts.git'
+            )
+    pass
 
 #------------------------------------------------------------------------------
 # PromptManager configuration
